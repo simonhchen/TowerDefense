@@ -22,9 +22,17 @@ class MainMenu(cocos.menu.Menu):
         self.menu_anchor_x = 'center'
 
         items = list()
-        items.append(MenuItem('New Game', self.on_new_game))
-        items.append(ToggleMenuItem('Show FPS: ', self.show_fps,
+        items.append(cocos.menu.MenuItem('New Game', self.on_new_game))
+        items.append(cocos.menu.ToggleMenuItem('Show FPS: ', self.show_fps,
                                     director.show_FPS))
-        items.append(MenuItem('Quit', pyglet.app.exit))
+        items.append(cocos.menu.MenuItem('Quit', pyglet.app.exit))
         self.create_menu(items, ac.ScaleTo(1.25, duration=0.25),
                          ac.ScaleTo(1.0, duration=0.25))
+
+
+def new_menu():
+    scene = cocos.scene.Scene()
+    color_layer = cocos.layer.ColorLayer(205, 133, 63, 255)
+    scene.add(MainMenu(), z=1)
+    scene.add(color_layer, z=0)
+    return scene
