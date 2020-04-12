@@ -4,9 +4,11 @@ import cocos.actions as ac
 RIGHT = ac.RotateBy(90, 1)
 LEFT = ac.RotateBy(-90, 1)
 
+
 def move(x, y):
     dur = abs(x+y) / 100.0
     return ac.MoveBy((x, y), duration=dur)
+
 
 class Scenario(object):
     def __init__(self, tmx_map, turrets, bunker, enemy_start):
