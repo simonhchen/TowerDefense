@@ -24,8 +24,9 @@ class MainMenu(cocos.menu.Menu):
         items = list()
         items.append(cocos.menu.MenuItem('New Game', self.on_new_game))
         items.append(cocos.menu.ToggleMenuItem('Show FPS: ', self.show_fps,
-                                    director.show_FPS))
+                                               director.show_FPS))
         items.append(cocos.menu.MenuItem('Quit', pyglet.app.exit))
+
         self.create_menu(items, ac.ScaleTo(1.25, duration=0.25),
                          ac.ScaleTo(1.0, duration=0.25))
 
