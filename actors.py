@@ -9,7 +9,7 @@ import pyglet.image
 from pyglet.image import Animation
 
 
-raw = pyglet.image.load('explosion.png')
+raw = pyglet.image.load('assets/explosion.png')
 seq = pyglet.image.ImageGrid(raw, 1, 8)
 explosions_img = Animation.from_image_sequence((seq, 0.07, False))
 
