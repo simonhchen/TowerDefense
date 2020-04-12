@@ -30,7 +30,7 @@ class Scenario(object):
 
     @actions.setter
     def actions(self, actions):
-        self._actions.RotateBy(90, 0.5)
+        self._actions = ac.RotateBy(90, 0.5)
         for step in actions:
             self._actions += step
 
@@ -47,3 +47,4 @@ def get_scenario():
                   LEFT, move(-415, 0), RIGHT,
                   move(0, 160), RIGHT, move(420, 0)]
     return sc
+

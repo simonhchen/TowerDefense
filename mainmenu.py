@@ -43,3 +43,4 @@ def new_menu():
     scene.add(MainMenu(), z=1)
     scene.add(color_layer, z=0)
     return scene
+
