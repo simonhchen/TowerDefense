@@ -60,15 +60,15 @@ class GameLayer(cocos.layer.Layer):
             obj = next(self.coll_man.iter_colliding(turret), None)
             turret.collide(obj)
         for obj in self.coll_man.iter_colliding(self.bunker):
-            self.bunker.collid(obj)
+            self.bunker.collide(obj)
 
         if random.random() < 0.005:
             self.create_enemy()
 
     def create_enemy(self):
         enemy_start = self.scenario.enemy_start
-        x = enemy_start[0] + random.random(-10, 10)
-        y = enemy_start[1] + random.random(-10, 10)
+        x = enemy_start[0] + random.uniform(-10, 10)
+        y = enemy_start[1] + random.uniform(-10, 10)
         self.add(actors.Enemy(x, y, self.scenario.actions))
 
     def on_mouse_press(self, x, y, buttons, mod):

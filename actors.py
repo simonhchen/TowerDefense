@@ -45,7 +45,7 @@ class Actor(cocos.sprite.Sprite):
     def __init__(self, img, x, y):
         super(Actor, self).__init__(img, position=(x, y))
         self._cshape = cm.CircleShape(self.position,
-                                      self.widith * 0.5)
+                                      self.width * 0.5)
 
     @property
     def cshape(self):
@@ -84,7 +84,7 @@ class Turret(Actor):
 
 class Enemy(Actor):
     def __init__(self, x, y, actions):
-        super(Enemy, self).__init__('tank.png')
+        super(Enemy, self).__init__('tank.png', x, y)
         self.health = 100
         self.score = 20
         self.destroyed = False
@@ -98,7 +98,7 @@ class Enemy(Actor):
             self.explode()
 
     def explode(self):
-        self.parent_add(Explosion(self.position))
+        self.parent.add(Explosion(self.position))
         self.kill()
 
 
